@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRO CAMPO PET SHOP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="WhatsApp Image 2024-11-30 at 21.35.33.jpeg" alt="Logo da Empresa" width="100" height="100">
+        </div>
+        <h1>PetShop - Agro Campo</h1>
+    </header>
+
+    <section class="promocoes">
+        <h2>Promoções da Semana</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="Racao-Origens-Adultos-Mini-e-Pequeno.png" alt="Promoção 1">
+                <img src="51.LATERAL1.png" alt="Promoção 2">
+                <img src="special-dog-carne-adultos-flna4-20211223135246.png" alt="Promoção 3">
+            </div>
+        </div>
+    </section>
+
+    <section class="produtos">
+        <h2>Escolha sua Ração</h2>
+        <div class="produto" data-preco="50" data-nome="Ração Premium">
+            <img src="Racao-Origens-Adultos-Mini-e-Pequeno.png" width="100" height="100" alt="Ração ORIGENS">
+            <p>Ração ORIGENS 25KG - R$155,00</p>
+            <button class="comprar" onclick="adicionarAoCarrinho('Ração ORIGENS', 155)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto" data-preco="60" data-nome="Ração FORMULA NATURAL">
+            <img src="51.LATERAL1.png" width="100" height="100" alt="Ração FORMULA NATURAL">
+            <p>Ração FORMULA NATURAL 15KG - R$80,00</p>
+            <button class="comprar" onclick="adicionarAoCarrinho('Ração FORMULA NATURAL', 80)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto" data-preco="50" data-nome="Ração SPECIAL DOG">
+            <img src="special-dog-carne-adultos-flna4-20211223135246.png" width="150" height="150" alt="Ração Premium">
+            <p>Ração SPECIAL DOG 25KG - R$115,00</p>
+            <button class="comprar" onclick="adicionarAoCarrinho('Ração SPECIAL DOG', 115)">Adicionar ao Carrinho</button>
+        </div>
+        
+    </section>
+
+   
+    <section class="carrinho">
+        <h2>Carrinho de Compras</h2>
+        <div id="itensCarrinho">
+            <p>Nenhum item no carrinho.</p>
+        </div>
+        <p id="totalCarrinho">Total: R$0,00</p>
+        <button onclick="proseguirParaPagamento()">Prosseguir para o Pagamento</button>
+    </section>
+
+   
+    <section class="pagamento" style="display:none;">
+        <h2>Escolha a Forma de Pagamento</h2>
+        <button onclick="mostrarPagamentoCartao()">Pagamento com Cartão</button>
+        <button onclick="mostrarPagamentoPix()">Pagamento com Pix</button>
+    </section>
+
+    <section class="cartao" style="display:none;">
+        <h2>Preencha os dados do Cartão</h2>
+        <input type="text" placeholder="Número do Cartão" id="cartao-numero">
+        <input type="text" placeholder="Validade" id="cartao-validade">
+        <input type="text" placeholder="CVV" id="cartao-cvv">
+        <button onclick="validarPagamento()">Finalizar Pagamento</button>
+    </section>
+
+    <section class="pix" style="display:none;">
+        <h2>Pagamento via Pix</h2>
+        <p>Escaneie o QR Code para efetuar o pagamento.</p>
+        <img src="qr-code-novo-fw-300x300-png.png" width="90" height="90" alt="QR Code">
+        <button onclick="validarPagamento()">Finalizar Pagamento</button>
+    </section>
+
+    <section class="endereco" style="display:none;">
+        <h2>Endereço de Entrega</h2>
+        <input type="text" placeholder="Rua" id="endereco-rua">
+        <input type="text" placeholder="Cidade" id="endereco-cidade">
+        <input type="text" placeholder="CEP" id="endereco-cep">
+        <input type="text" placeholder="Nome Cliente" id="nome-cliente">
+        <button onclick="finalizarEndereco()">Finalizar Endereço</button>
+    </section>
+
+    <div id="finalizacao" style="display:none;">
+        <p id="mensagemFinalizacao">Compra finalizada com sucesso!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
